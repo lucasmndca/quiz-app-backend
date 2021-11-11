@@ -1,0 +1,29 @@
+{
+  "name": "quiz-app-backend",
+  "version": "1.0.0",
+  "description": "Backend for quiz-app",
+  "main": "src/main/index.js",
+  "scripts": {
+    "test": "jest ./src/test",
+    "dev": "nodemon ./src/main/index.js",
+    "start": "node ./src/main/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasmndca/quiz-app.git"
+  },
+  "author": "lucasmndca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucasmndca/quiz-app/issues"
+  },
+  "homepage": "https://github.com/lucasmndca/quiz-app#readme",
+  "dependencies": {
+    "colorful-log": "^1.0.7",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
