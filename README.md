@@ -10,7 +10,7 @@ For autoreload, run `npm run dev` or `yarn dev`.
 For regular execution, run `npm start` or `yarn start`
 
 ## Testing
-`npm run test` or `yarn test`
+`npm test` or `yarn test`
 
 ## Stack
 - Node.js
