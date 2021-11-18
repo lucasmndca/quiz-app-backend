@@ -1,20 +1,15 @@
-const settings = require('../../main/config/settings')
 const mongoose = require('mongoose')
-
-jest.createMockFromModule('colorful-log')
-jest.createMockFromModule('mongoose')
+const settings = require('../../main/config/settings')
 
 describe('config', () => {
     let oldEnv = process.env
     let app
     let routes
 
+
     beforeEach(() => {
         app = { use: jest.fn() }
         routes = { get: jest.fn() }
-        settings.config = jest.fn(app => app.use(null))
-        settings.setRoutes = jest.fn((app, routes) => app.use(routes))
-        settings.connect = jest.fn(async () => await mongoose.connect(`${process.env.DB_HOST_BASE}${process.env.DB_USER}:${process.env.DB_PSWD}${process.env.DB_HOST_ROUTE}`))
         mongoose.connect = jest.fn()
     })
 
@@ -53,6 +48,5 @@ describe('config', () => {
             expect(spy).toHaveBeenCalledWith('fakedb+srv://admin:superSecurePassword123@mycluster')
             expect(spy).not.toThrow()
         })
-
     })
 })

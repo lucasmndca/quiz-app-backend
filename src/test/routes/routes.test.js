@@ -1,7 +1,5 @@
 const routes = require('../../main/routes/routes')
 
-jest.mock('colorful-log')
-
 describe('routes', () => {
     describe('routes.js', () => {
 
