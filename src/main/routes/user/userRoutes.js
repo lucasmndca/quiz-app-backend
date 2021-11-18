@@ -1,16 +1,14 @@
 const express = require('express')
 const User = require('../../models/User')
-const Logger = require('colorful-log').default
 
 const userRouter = express()
-const log = new Logger()
 
 userRouter.get('/', async (req, res) => {
     try {
         const users = await User.find()
         res.status(200).json(users)
     } catch (error) {
-        log.error(error)
+        console.error(error)
         res.status(500).json(error)
     }
 })
@@ -20,7 +18,7 @@ userRouter.get('/:id', async (req, res) => {
         const params = req.params
         res.status(200).json(await User.findById(params.id))
     } catch (error) {
-        log.error(error)
+        console.error(error)
         res.status(500).json(error)
     }
 })
@@ -63,7 +61,7 @@ userRouter.delete('/:id', async (req, res) => {
         await User.deleteOne({_id: params.id})
         res.status(200).json({message: `User ${params.id} has been deleted.`})
     } catch (error) {
-        log.error(error)
+        console.error(error)
         res.status(500).json(error)
     }
 })
